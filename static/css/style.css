@@ -1,0 +1,15 @@
+body {
+  background-color:#00222b;
+}
+
+div.jumbotron {
+  background-color:#00222b;
+}
+
+.w-50p {
+  width:50%;
+}
+
+.pd-10p {
+  padding-top:10%;
+}
