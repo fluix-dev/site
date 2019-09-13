@@ -14,21 +14,48 @@ span {
   color:#00222b;
 }
 
+.text-red {
+  color:#d7475f;
+}
+
 div.jumbotron {
   background-color:#00222b;
   border-radius:0;
+}
+
+div.card {
+  margin: 10px 10px;
+  width:15rem;
+  background-color: #00222b;
+  border: 5px solid #d7475f;
+}
+
+.no-margin {
+  margin:0;
 }
 
 .w-50p {
   width:50%;
 }
 
+.w-25p {
+  width:25%;
+}
+
 .pt-10p {
   padding-top:10%;
 }
 
+.pt-10 {
+  padding-top:10px;
+}
+
 .pb-10p {
   padding-bottom:10%;
+}
+
+.pb-10 {
+  padding-bottom:10px;
 }
 
 .pr-10p {

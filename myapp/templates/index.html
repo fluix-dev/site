@@ -8,12 +8,12 @@
   <i class="zmdi zmdi-chevron-down zmdi-hc-3x"></i>
 </div>
 
-<div class="container-fluid text-white">
+<div class="container-fluid text-white pb-10">
   <div class="row">
-    <div class="col-4 text-right">
+    <div class="col-md-4 col-12  text-right">
       <img class="w-50p" src="{% static 'res/img/me.png' %}" alt="Drawing of person">
     </div>
-    <div class="col-8">
+    <div class="col-md-8 col-12 ">
       <h2><strong>About Me</strong></h2>
       <h4 class="pr-10p">I'm a high-school student looking to get into the field of Computer Science. I began proramming in 2014 and have continued ever since.
         I have taken up many types of projects such as web development, game design, and even graphic design. Recently, I have begun participating in coding
@@ -26,8 +26,8 @@
           <a href="https://github.com/TheAvidDev" target="_blank"><i class="text-dark zmdi zmdi-github zmdi-hc-3x"></i></a>
           <a href="https://instagram.com/AvidDev" target="_blank"><i class="text-dark zmdi zmdi-instagram zmdi-hc-3x"></i></a>
           <a href="https://twitch.tv/theaviddev" target="_blank"><i class="text-dark zmdi zmdi-twitch zmdi-hc-3x"></i></a>
-          </div>
-          <div class="col">
+        </div>
+        <div class="col">
           <span>Online Judges:</span>
           <a href="https://dmoj.ca/user/bit" target="_blank"><span class="text-dark">DMOJ</span></a>
         </div>
@@ -35,5 +35,29 @@
     </div>
   </div>
 </div>
+
+<div class="no-margin jumbotron text-center text-white">
+  <img class="w-25p" src="{% static 'res/img/projects.png' %}" alt="Handwritten TheAvidDev">
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="card">
+        <img class="card-img-top" src="https://raw.githubusercontent.com/TheAvidDev/particle-sim/master/pics/game.png" alt="Card image cap">
+        <div class="card-body">
+          <a href="https://github.com/TheAvidDev/particle-sim" class="text-white"><h5 class="card-title">Particle Simulator</h5></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-img-top" src="https://raw.githubusercontent.com/TheAvidDev/eventix-site/master/pics/tickets.png" alt="Card image cap">
+        <div class="card-body">
+          <a href="https://github.com/TheAvidDev/particle-sim" class="text-white"><h5 class="card-title">Eventix Website</h5></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 {% endblock %}
