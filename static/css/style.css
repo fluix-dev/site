@@ -61,3 +61,20 @@ div.card {
 .pr-10p {
   padding-right:10%;
 }
+
+hr {
+  padding:0;
+  margin:0;
+  color:#000000;
+  border-width:5px;
+}
+
+.btn-contact {
+  width:100%;
+  background-color:#47D75A;
+  border-color:#47D75A;
+}
+
+.btn-contact:hover {
+  background-color:#2e8c3a;
+}
