@@ -2,8 +2,38 @@
 {% block body %}
 {% load static %}
 
-<div class="jumbotron text-center pd-10p">
-  <img class="w-50p" src="{% static 'res/img/logo.png' %}">
+<div class="jumbotron text-center text-white pt-10p pb-10p">
+  <img class="w-50p" src="{% static 'res/img/logo.png' %}" alt="Handwritten TheAvidDev">
+  <br>
+  <i class="zmdi zmdi-chevron-down zmdi-hc-3x"></i>
+</div>
+
+<div class="container-fluid text-white">
+  <div class="row">
+    <div class="col-4 text-right">
+      <img class="w-50p" src="{% static 'res/img/me.png' %}" alt="Drawing of person">
+    </div>
+    <div class="col-8">
+      <h2><strong>About Me</strong></h2>
+      <h4 class="pr-10p">I'm a high-school student looking to get into the field of Computer Science. I began proramming in 2014 and have continued ever since.
+        I have taken up many types of projects such as web development, game design, and even graphic design. Recently, I have begun participating in coding
+        contests to improve my competitive programming skills. You can take a look at some of my projects below.
+      </h4>
+      <br>
+      <div class="row">
+        <div class="col">
+          <span>Social:</span>
+          <a href="https://github.com/TheAvidDev" target="_blank"><i class="text-dark zmdi zmdi-github zmdi-hc-3x"></i></a>
+          <a href="https://instagram.com/AvidDev" target="_blank"><i class="text-dark zmdi zmdi-instagram zmdi-hc-3x"></i></a>
+          <a href="https://twitch.tv/theaviddev" target="_blank"><i class="text-dark zmdi zmdi-twitch zmdi-hc-3x"></i></a>
+          </div>
+          <div class="col">
+          <span>Online Judges:</span>
+          <a href="https://dmoj.ca/bit" target="_blank"><span class="text-dark">DMOJ</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

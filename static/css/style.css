@@ -1,15 +1,36 @@
 body {
-  background-color:#00222b;
+  background-color:#47A2D7;
+}
+
+a:hover, a:visited, a:link, a:active{
+    text-decoration: none;
+}
+
+span {
+  font-size:1.75em;
+}
+
+.text-dark {
+  color:#00222b;
 }
 
 div.jumbotron {
   background-color:#00222b;
+  border-radius:0;
 }
 
 .w-50p {
   width:50%;
 }
 
-.pd-10p {
+.pt-10p {
   padding-top:10%;
+}
+
+.pb-10p {
+  padding-bottom:10%;
+}
+
+.pr-10p {
+  padding-right:10%;
 }
