@@ -27,7 +27,8 @@ $(document).ready(function() {
 
     //Return to 'Submit' text
     setTimeout(function() {
-      $('#contact-submit').val("Submit");
+      $('#contact-submit').val("Send");
+      $('#contact-output').text("");
     }, 2000);
 
     return false;
