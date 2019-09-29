@@ -82,3 +82,14 @@ hr {
 .btn-primary:disabled {
   background-color:#565d66;
 }
+
+@media only screen and (max-width: 1026px) {
+    #me-img {
+        display: none;
+    }
+
+    #about-div {
+        max-width: 100%;
+        flex: 0 100%;
+    }
+}
