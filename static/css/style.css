@@ -78,3 +78,7 @@ hr {
 .btn-contact:hover {
   background-color:#2e8c3a;
 }
+
+.btn-primary:disabled {
+  background-color:#565d66;
+}

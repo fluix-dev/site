@@ -47,14 +47,12 @@
           <a href="https://github.com/TheAvidDev/particle-sim" class="text-white"><h5 class="card-title">Particle Simulator</h5></a>
         </div>
       </div>
-
       <div class="card">
         <img class="card-img-top" src="https://raw.githubusercontent.com/TheAvidDev/eventix-site/master/pics/tickets.png" alt="Card image cap">
         <div class="card-body">
           <a href="https://github.com/TheAvidDev/particle-sim" class="text-white"><h5 class="card-title">Eventix Website</h5></a>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -64,29 +62,36 @@
 <div class="no-margin jumbotron text-center text-white">
   <img class="w-25p" src="{% static 'res/img/contact.png' %}" alt="Handwritten TheAvidDev">
   <br><br>
+  <div id="contact-output"></div> <!-- form output -->
+  <br>
   <div class="container" style="max-width:750px">
-    <form>
+    <form action="/contact/" method="POST" id="contact-form">
+      {% csrf_token %}
       <div class="row">
         <div class="col-12 col-md-6">
           <div class="form-group">
-            <input type="text" class="form-control" id="inputName" placeholder="Name">
+            {{form.name}}
           </div>
         </div>
         <div class="col-12 col-md-6">
           <div class="form-group">
-            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Email">
+            {{form.email}}
           </div>
         </div>
         <div class="col-12">
           <div class="form-group">
-            <textarea class="form-control" id="messageTextArea" rows="6" placeholder="Message"></textarea>
+            {{form.message}}
           </div>
         </div>
       </div>
       <div col="col-12">
-        <button type="submit" class="btn btn-primary btn-contact">Submit</button>
+        <input id="contact-submit" type="submit" value="Submit" class="btn btn-primary btn-contact"></input>
       </div>
     </form>
   </div>
 </div>
+
+<footer>
+  <script type="text/javascript" src="{% static 'js/contact.js' %}"></script>
+</footer>
 {% endblock %}
