@@ -21,7 +21,13 @@
 </head>
 
 <body id="base-top">
-  {% include 'navbar.html' %}
+  {% include 'sections/navbar.html' %}
+
+  <header class="masthead bg-primary text-white text-center">
+    {% block header %}
+    {% endblock %}
+  </header>
+
   {% block body %}
   {% endblock %}
 
@@ -29,15 +35,12 @@
   {% include 'scripts.html' %}
   {% block scripts %}
   {% endblock %}
-  {% include 'footer.html' %}
+
+  {% block footer %}
+  {% endblock %}
 </footer>
 
-<!-- Copyright Section -->
-<section class="copyright py-4 text-center text-white">
-  <div class="container">
-    <small>Copyright &copy; TheAvidDev 2019</small>
-  </div>
-</section>
+{% include 'sections/copyright.html' %}
 
 </body>
 </html>
