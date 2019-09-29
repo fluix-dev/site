@@ -45,7 +45,7 @@ $(document).ready(function() {
       url: $(this).attr('action'),
       success: function(response) {
         setTimeout(function() {
-          $('#contact-output').text(response);
+          $('#contact-submit').val(response);
         }, 750);
       },
     });
@@ -54,14 +54,13 @@ $(document).ready(function() {
     setTimeout(function() {
       $('#contact-form').find("input, textarea").val("");
       $('#contact-submit').prop("disabled", false);
-      $('#contact-submit').val("Sent!");
     }, 750);
 
     //Return to 'Submit' text
     setTimeout(function() {
       $('#contact-submit').val("Send");
       $('#contact-output').text("");
-    }, 2000);
+    }, 3000);
 
     return false;
   });

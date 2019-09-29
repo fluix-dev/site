@@ -13,7 +13,7 @@ def contact(request):
         cf = ContactForm(request.POST)
 
         # Set default fail message
-        message = 'An error occured, please try again later.'
+        message = 'Failed... Try again later.'
         if(cf.is_valid()):
             # Create actual object
             cm = ContactMessage()
@@ -23,6 +23,6 @@ def contact(request):
             cm.save()
 
             # Success Message
-            message = "Thanks for reaching out! I'll get back to you soon."
+            message = "Sent!"
 
         return HttpResponse(message)
