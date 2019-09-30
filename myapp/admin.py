@@ -19,4 +19,6 @@ class ContactMessageAdmin(admin.ModelAdmin):
             'fields': ('created_at', 'updated_at'),
         }),
     )
+
 admin.site.register(ContactMessage, ContactMessageAdmin)
+admin.site.register(Project)
