@@ -16,8 +16,9 @@ class ContactMessage(TimeStampMixin):
     def __str__(self):
         return self.name
 
+
 class Project(models.Model):
-    #image = models.ImageField(help_text='An image representing the project')
+    image = models.ImageField(help_text='An image representing the project')
     name = models.CharField(max_length=100, help_text='The name or title of the project.')
     description = models.TextField(max_length=2047, help_text='A description of the project.')
     local_link = models.URLField(blank=True, help_text='Link to the running project.')
