@@ -2,16 +2,16 @@ from django.db import models
 
 # Create your models here.
 class TimeStampMixin(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, help_text='The time this model was created at.')
+    updated_at = models.DateTimeField(auto_now=True, help_text='The last time this model was modified at.')
 
     class Meta:
         abstract = True
 
 class ContactMessage(TimeStampMixin):
-    name = models.CharField(max_length=100, editable=False)
-    email = models.EmailField(editable=False)
-    message = models.TextField(max_length=2047, editable=False)
+    name = models.CharField(max_length=100, editable=False, help_text='The name provided by the user.')
+    email = models.EmailField(editable=False, help_text='The email provided by the user.')
+    message = models.TextField(max_length=2047, editable=False, help_text='The message provided by the user.')
 
     def __str__(self):
         return self.name
