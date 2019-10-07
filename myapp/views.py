@@ -6,7 +6,11 @@ import json
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html', {'form':ContactForm()})
+    context = {
+        'form':ContactForm(),
+        'projects':Project.objects.all(),
+    }
+    return render(request, 'index.html', context)
 
 def contact(request):
     if request.method == "POST":
