@@ -27,6 +27,12 @@
               <img class="img-fluid rounded mb-5" src="{{ project.image.url }}" alt="">
               <!-- Portfolio Modal - Text -->
               <p class="mb-5">{{ project.description }}</p>
+              {% if project.source_link != '' %}
+              <a class="btn btn-primary" href="{{ project.source_link }}" target="_blank">
+                <i class="zmdi zmdi-github-alt"></i>
+                View Source
+              </a>
+              {% endif %}
             </div>
           </div>
         </div>
