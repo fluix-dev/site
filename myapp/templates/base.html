@@ -20,10 +20,10 @@
   <link href="{% static 'css/freelancer.min.css' %}" rel="stylesheet">
 </head>
 
-<body id="base-top">
+<body>
   {% include 'sections/navbar.html' %}
 
-  <header class="masthead bg-primary text-white text-center">
+  <header class="masthead bg-primary text-white text-center" id="home">
     {% block header %}
     {% endblock %}
   </header>
