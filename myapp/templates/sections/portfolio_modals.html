@@ -33,6 +33,13 @@
                 View Source
               </a>
               {% endif %}
+
+              {% if project.local_link != '' %}
+              <a class="btn btn-primary" href="{{ project.local_link }}" target="_blank">
+                <i class="zmdi zmdi-github-alt"></i>
+                View Project
+              </a>
+              {% endif %}
             </div>
           </div>
         </div>
