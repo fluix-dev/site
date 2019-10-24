@@ -24,6 +24,10 @@ class Project(models.Model):
     description = models.TextField(max_length=2047, help_text='A description of the project.')
     local_link = models.URLField(blank=True, help_text='Link to the running project.')
     source_link = models.URLField(blank=True, help_text="Link to the project's source code.")
+    sort_order = models.PositiveIntegerField(default=0, blank=False, null=False)
+
+    class Meta(object):
+        ordering = ['sort_order']
 
     def __str__(self):
         return self.name
