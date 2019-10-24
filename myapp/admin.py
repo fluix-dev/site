@@ -1,4 +1,5 @@
 from django.contrib import admin
+from adminsortable2.admin import SortableAdminMixin
 from .models import *
 
 # Register your models here.
@@ -20,5 +21,8 @@ class ContactMessageAdmin(admin.ModelAdmin):
         }),
     )
 
+class ProjectAdmin(SortableAdminMixin, admin.ModelAdmin):
+    pass
+
 admin.site.register(ContactMessage, ContactMessageAdmin)
-admin.site.register(Project)
+admin.site.register(Project, ProjectAdmin)
