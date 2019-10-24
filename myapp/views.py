@@ -8,7 +8,7 @@ import json
 def index(request):
     context = {
         'form':ContactForm(),
-        'projects':Project.objects.all(),
+        'projects':Project.objects.all().order_by('sort_order'),
     }
     return render(request, 'index.html', context)
 
