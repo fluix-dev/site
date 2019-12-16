@@ -24,5 +24,7 @@ class ContactMessageAdmin(admin.ModelAdmin):
 class ProjectAdmin(SortableAdminMixin, admin.ModelAdmin):
     pass
 
+admin.site.site_header = 'Site Administration'
+
 admin.site.register(ContactMessage, ContactMessageAdmin)
 admin.site.register(Project, ProjectAdmin)
