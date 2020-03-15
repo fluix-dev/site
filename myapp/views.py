@@ -1,8 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
 from .forms import *
 from .models import *
 import json
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 def index(request):
@@ -25,6 +28,9 @@ def contact(request):
             cm.email = cf.cleaned_data['email']
             cm.message = cf.cleaned_data['message']
             cm.save()
+
+            # Log message
+            logger.info('New contact message: %s', request.build_absolute_uri(reverse('admin:myapp_contactmessage_change', args=(cm.id,))))
 
             # Success Message
             message = "Sent!"
