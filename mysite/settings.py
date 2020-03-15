@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'myapp',
 
     'adminsortable2',
+    'discord_integration',
+    'solo',
 ]
 
 MIDDLEWARE = [
@@ -103,6 +105,32 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Logging
+LOGGING = {
+    'handlers': {
+        'discord': {
+            'level': 'INFO',
+            'class': 'discord_integration.log.DiscordMessageHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers':['file', 'warning', 'discord'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+        'django.request': {
+            'handlers': ['discord'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'myapp': {
+            'handlers':['discord'],
+            'propgate': True,
+            'level':'DEBUG',
+        },
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
