@@ -107,6 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Logging
 LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
     'handlers': {
         'discord': {
             'level': 'INFO',
@@ -115,7 +117,7 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers':['file', 'warning', 'discord'],
+            'handlers':['discord'],
             'propagate': True,
             'level':'DEBUG',
         },
