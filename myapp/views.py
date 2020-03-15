@@ -1,9 +1,11 @@
-from django.shortcuts import render, reverse
-from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
-from .forms import *
-from .models import *
 import json
 import logging
+
+from .forms import ContactForm
+from .models import ContactMessage, Project
+
+from django.shortcuts import render, reverse
+from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
 
 logger = logging.getLogger(__name__)
 

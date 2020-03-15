@@ -1,6 +1,7 @@
+from .models import ContactMessage, Project
+
 from django.contrib import admin
 from adminsortable2.admin import SortableAdminMixin
-from .models import *
 
 # Register your models here.
 class ContactMessageAdmin(admin.ModelAdmin):
