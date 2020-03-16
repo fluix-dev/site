@@ -38,5 +38,4 @@ def contact(request):
             message = "Sent!"
 
         return HttpResponse(message)
-    else:
-        return Http404()
+    return Http404()
