@@ -8,6 +8,7 @@ class ContactMessageAdmin(admin.ModelAdmin):
     # Displayed in list view
     date_hierarchy = 'updated_at'
     list_display = ('name', 'email', 'message_truncate', 'created_at')
+    
     def message_truncate(self, obj):
         return obj.message[:80]
 
