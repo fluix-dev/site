@@ -5,7 +5,7 @@ from .forms import ContactForm
 from .models import ContactMessage, Project
 
 from django.shortcuts import render, reverse
-from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
+from django.http import Http404, HttpResponse
 
 logger = logging.getLogger(__name__)
 
@@ -38,3 +38,5 @@ def contact(request):
             message = "Sent!"
 
         return HttpResponse(message)
+    else:
+        return Http404()
