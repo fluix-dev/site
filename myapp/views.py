@@ -10,11 +10,10 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 def index(request):
-    context = {
-        'form':ContactForm(),
-        'projects':Project.objects.all().order_by('sort_order'),
-    }
-    return render(request, 'index.html', context)
+    return render(request, 'index.html')
+
+def about(request):
+    return render(request, 'about.html')
 
 def contact(request):
     if request.method == "POST":
@@ -23,7 +22,7 @@ def contact(request):
         # Set default fail message
         message = 'Failed... Try again later.'
         if(cf.is_valid()):
-            # Create actual object
+            # Create message object
             cm = ContactMessage()
             cm.name = cf.cleaned_data['name']
             cm.email = cf.cleaned_data['email']
@@ -31,10 +30,20 @@ def contact(request):
             cm.save()
 
             # Log message
-            logger.info('New contact message: %s', request.build_absolute_uri(reverse('admin:myapp_contactmessage_change', args=(cm.id,))))
+            logger.info('New contact message: %s', request.build_absolute_uri(
+                reverse('admin:myapp_contactmessage_change', args=(cm.id,))))
 
             # Success Message
             message = "Sent!"
 
         return HttpResponse(message)
-    return Http404()
+    context = {
+        'form':ContactForm(),
+    }
+    return render(request, 'contact.html', context)
+
+def projects(request):
+    context = {
+        projects: Project.objects.all().order_by('sort_order'),
+    }
+    return render(request, 'projects.html', context)

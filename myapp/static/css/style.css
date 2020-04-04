@@ -1,95 +1,14 @@
-body {
-  background-color:#47A2D7;
+.navbar-light .navbar-nav .c-blue {
+  color: #47A2D7;
 }
 
-a:hover, a:visited, a:link, a:active{
-    text-decoration: none;
+.navbar-light .navbar-nav .c-blue:hover {
+  color: #1B212C;
 }
 
-span {
-  font-size:1.75em;
-}
-
-.text-dark {
-  color:#00222b;
-}
-
-.text-red {
-  color:#d7475f;
-}
-
-div.jumbotron {
-  background-color:#00222b;
-  border-radius:0;
-}
-
-div.card {
-  margin: 10px 10px;
-  width:15rem;
-  background-color: #00222b;
-  border: 5px solid #d7475f;
-}
-
-.no-margin {
-  margin:0;
-}
-
-.w-50p {
-  width:50%;
-}
-
-.w-25p {
-  width:25%;
-}
-
-.pt-10p {
-  padding-top:10%;
-}
-
-.pt-10 {
-  padding-top:10px;
-}
-
-.pb-10p {
-  padding-bottom:10%;
-}
-
-.pb-10 {
-  padding-bottom:10px;
-}
-
-.pr-10p {
-  padding-right:10%;
-}
-
-hr {
-  padding:0;
-  margin:0;
-  color:#000000;
-  border-width:5px;
-}
-
-.btn-contact {
-  width:100%;
-  background-color:#47D75A;
-  border-color:#47D75A;
-}
-
-.btn-contact:hover {
-  background-color:#2e8c3a;
-}
-
-.btn-primary:disabled {
-  background-color:#565d66;
-}
-
-@media only screen and (max-width: 1026px) {
-    #me-img {
-        display: none;
-    }
-
-    #about-div {
-        max-width: 100%;
-        flex: 0 100%;
-    }
+.navbar-custom {
+  border-color: #1B212C;
+  border-bottom: 2px solid;
+  height: 80px;
+  padding-top: 0px;
 }
