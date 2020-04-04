@@ -37,9 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'myapp',
-
     'adminsortable2',
     'discord_integration',
     'solo',
@@ -94,9 +92,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',},
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
@@ -117,21 +113,17 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers':['discord'],
+            'handlers': ['discord'],
             'propagate': True,
-            'level':'DEBUG',
+            'level': 'DEBUG',
         },
         'django.request': {
             'handlers': ['discord'],
             'level': 'ERROR',
             'propagate': False,
         },
-        'myapp': {
-            'handlers':['discord'],
-            'propgate': True,
-            'level':'DEBUG',
-        },
-    }
+        'myapp': {'handlers': ['discord'], 'propgate': True, 'level': 'DEBUG',},
+    },
 }
 
 # Internationalization

@@ -15,16 +15,14 @@ class ContactMessageAdmin(admin.ModelAdmin):
     # Displayed in model editing
     readonly_fields = ('name', 'email', 'message', 'created_at', 'updated_at')
     fieldsets = (
-        ('Message', {
-            'fields': ('name', 'email', 'message')
-        }),
-        ('Dates and Times', {
-            'fields': ('created_at', 'updated_at'),
-        }),
+        ('Message', {'fields': ('name', 'email', 'message')}),
+        ('Dates and Times', {'fields': ('created_at', 'updated_at'),}),
     )
+
 
 class ProjectAdmin(SortableAdminMixin, admin.ModelAdmin):
     pass
+
 
 admin.site.site_header = 'Site Administration'
 

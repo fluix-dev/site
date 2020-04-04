@@ -12,8 +12,10 @@ logger = logging.getLogger(__name__)
 def index(request):
     return render(request, 'index.html')
 
+
 def about(request):
     return render(request, 'about.html')
+
 
 def contact(request):
     if request.method == "POST":
@@ -21,7 +23,7 @@ def contact(request):
 
         # Set default fail message
         message = 'Failed... Try again later.'
-        if(cf.is_valid()):
+        if cf.is_valid():
             # Create message object
             cm = ContactMessage()
             cm.name = cf.cleaned_data['name']
@@ -30,17 +32,22 @@ def contact(request):
             cm.save()
 
             # Log message
-            logger.info('New contact message: %s', request.build_absolute_uri(
-                reverse('admin:myapp_contactmessage_change', args=(cm.id,))))
+            logger.info(
+                'New contact message: %s',
+                request.build_absolute_uri(
+                    reverse('admin:myapp_contactmessage_change', args=(cm.id,))
+                ),
+            )
 
             # Success Message
             message = "Sent!"
 
         return HttpResponse(message)
     context = {
-        'form':ContactForm(),
+        'form': ContactForm(),
     }
     return render(request, 'contact.html', context)
+
 
 def projects(request):
     context = {
