@@ -14,6 +14,24 @@ class TimeStampMixin(models.Model):
         abstract = True
 
 
+class Blog(TimeStampMixin):
+    slug = models.SlugField(primary_key=True, help_text='Slug for blog.')
+    title = models.CharField(max_length=255, help_text='Blog title.')
+    tag = models.CharField(max_length=50, help_text='Blog tag.')
+    published_at = models.DateTimeField(
+        help_text='Date this blog was published on.'
+    )
+    content = models.TextField(
+        max_length=35565, help_text='Markdown and/or HTML blog content.'
+    )
+
+    def __str__(self):
+        return self.title
+
+    def get_time_length(self):
+        return int(len(self.content.split()) / 250)
+
+
 class ContactMessage(TimeStampMixin):
     name = models.CharField(
         max_length=100,
