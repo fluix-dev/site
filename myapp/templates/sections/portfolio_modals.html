@@ -1,6 +1,6 @@
 <!-- Portfolio Modals -->
 {% load static %}
-{% load markup_tags %}
+{% load mistune %}
 {% for project in projects %}
 <div class="portfolio-modal modal fade" id="portfolioModal{{ forloop.counter }}" tabindex="-1" role="dialog" aria-labelledby="portfolioModal{{ forloop.counter }}Label" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
@@ -27,7 +27,7 @@
               <!-- Portfolio Modal - Image -->
               <img class="img-fluid rounded mb-5" src="{{ project.image.url }}" alt="">
               <!-- Portfolio Modal - Text -->
-              <p class="mb-5">{{ project.get_description|apply_markup:"markdown" }}</p>
+              <p class="mb-5">{{ project.get_description|mistune }}</p>
               {% if project.source_link != '' %}
               <a class="btn btn-primary" href="{{ project.source_link }}" target="_blank">
                 <i class="zmdi zmdi-github-alt"></i>
