@@ -16,7 +16,7 @@ isort==4.3.21
 lazy-object-proxy==1.4.3
 Markdown==3.2.1
 mccabe==0.6.1
-mistune==0.8.4
+mistune==2.0.0a2
 msgpack==1.0.0
 Pillow==7.0.0
 Pygments==2.6.1
