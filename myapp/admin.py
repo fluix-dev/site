@@ -6,7 +6,13 @@ from adminsortable2.admin import SortableAdminMixin
 
 class BlogAdmin(admin.ModelAdmin):
     date_hierarchy = 'published_at'
-    list_display = ('title', 'tag', 'content_truncate', 'created_at', 'updated_at')
+    list_display = (
+        'title',
+        'tag',
+        'content_truncate',
+        'created_at',
+        'updated_at',
+    )
 
     def content_truncate(self, obj):
         return obj.content[:80]
@@ -17,6 +23,7 @@ class BlogAdmin(admin.ModelAdmin):
         ('Content', {'fields': ('content',)}),
         ('Dates', {'fields': ('created_at', 'updated_at')}),
     )
+
 
 class ContactMessageAdmin(admin.ModelAdmin):
     # Displayed in list view

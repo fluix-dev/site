@@ -10,9 +10,7 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 def index(request):
-    context = {
-        'blogs': Blog.objects.all().order_by('published_at')
-    }
+    context = {'blogs': Blog.objects.all().order_by('published_at')}
     return render(request, 'index.html', context)
 
 
