@@ -16,16 +16,13 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm navbar-light bg-light navbar-custom">
+  <nav class="navbar navbar-expand navbar-light bg-light navbar-custom">
 		<div class="container">
-	    <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="{% url 'index' %}">
 				<img src="{% static 'img/profile.png' %}" width="70" height="70" alt="AvidDev logo (a tesseract)">
+        <p>Avid Dev</p>
   	  </a>
-			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
-					      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			    <span class="navbar-toggler-icon"></span>
-		  </button>
-			<div class="collapse navbar-collapse" id="navbarNav">
+			<div id="navbarNav">
    		 	<ul class="navbar-nav ml-auto">
 	      	<li class="nav-item">
             <a class="nav-link c-blue" href="{% url 'index' %}">Blog</a>

@@ -1,3 +1,32 @@
+.container-custom {
+  max-width: 960px;
+  padding: 20px;
+  padding-top: 40px;
+}
+
+.h4-custom {
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar-brand img {
+    visibility: hidden;
+    width: 0px;
+  }
+
+  .navbar-brand p {
+    visibility: hidden;
+    width: 0px;
+  }
+}
+
+.navbar-brand p {
+  padding-top: 0.5rem;
+  display: inline-block;
+  color: #1B212C;
+}
+
 .navbar-light .navbar-nav .c-blue {
   color: #47A2D7;
 }
@@ -6,9 +35,23 @@
   color: #1B212C;
 }
 
+
 .navbar-custom {
   border-color: #1B212C;
   border-bottom: 2px solid;
   height: 80px;
-  padding-top: 0px;
+  box-shadow: 0px 2px 8px 0px rgba(0,0,0,.3), 0px 0px 2px 0px rgba(0,0,0,.05);
+}
+
+.text-gray {
+  color: #737374;
+}
+
+.text-link {
+  color: #000000;
+}
+
+.text-link:hover {
+  color: #000000;
+  text-decoration: none;
 }

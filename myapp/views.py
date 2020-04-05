@@ -1,7 +1,7 @@
 import logging
 
 from .forms import ContactForm
-from .models import ContactMessage, Project
+from .models import Blog, ContactMessage, Project
 
 from django.shortcuts import render, reverse
 from django.http import Http404, HttpResponse
@@ -10,11 +10,18 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    context = {
+        'blogs': Blog.objects.all().order_by('published_at')
+    }
+    return render(request, 'index.html', context)
 
 
 def about(request):
     return render(request, 'about.html')
+
+
+def blog(request, slug):
+    return render(request, 'blog.html', {'blog': Blog.objects.get(slug=slug)})
 
 
 def contact(request):

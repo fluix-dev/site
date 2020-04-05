@@ -3,18 +3,13 @@
 
 {% block body %}
 <div class="container container-custom">
-  {% for blog in blogs %}
-  <h4 class="h4-custom">
-    <a class="text-link" href="{% url 'blog' blog.slug %}">{{ blog.title }}</a>
-  </h4>
+  <h4 class="h4-custom">{{ blog.title }}</h4>
   <div class="row">
     <span class="text-gray col col-md-2"><i class="zmdi zmdi-calendar"></i> {{ blog.published_at.date }}</span>
     <span class="text-gray col col-md-2"><i class="zmdi zmdi-label"></i> {{ blog.tag }}</span>
     <span class="text-gray col"><i class="zmdi zmdi-time"></i> {{ blog.get_time_length }} min</span>
   </div>
-  {{ blog.content|mistune|truncatewords_html:150 }}
-  <a href="{% url 'blog' blog.slug %}">View more</a>
-  <hr>
-  {% endfor %}
+  <br>
+  {{ blog.content|mistune }}
 </div>
 {% endblock %}
