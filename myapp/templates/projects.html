@@ -1,4 +1,40 @@
 {% extends "base.html" %}
+{% load mistune %}
 
 {% block body %}
+<div class="container container-custom">
+  {% for project in projects %}
+  <h4>{{ project.name }}</h4>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-3">
+      <img src="{{ project.image.url }}" width=100%>
+    </div>
+    <div class="col-12 col-sm-6 col-md-9">
+      <div class="blog-content">
+        <div class="row">
+          {{ project.description|mistune }}
+        </div>
+        <div class="row ">
+          <div class="col-4">
+            {% if project.source_link %}
+              <a href="{{ project.source_link }}"><i class="zmdi zmdi-github"></i> View Source</a>
+            {% endif %}
+          </div>
+          <div class="col-4">
+            {% if project.local_link %}
+              <a href="{{ project.local_link }}"><i class="zmdi zmdi-laptop"></i> View Project</a>
+            {% endif %}
+          </div>
+          <div class="col-4">
+            {% if project.writeup_link %}
+              <a href="{{ project.writeup_link }}"><i class="zmdi zmdi-book"></i> View Writeup</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr><br>
+  {% endfor %}
+</div>
 {% endblock %}

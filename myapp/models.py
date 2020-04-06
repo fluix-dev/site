@@ -65,6 +65,9 @@ class Project(models.Model):
     source_link = models.URLField(
         blank=True, help_text="Link to the project's source code."
     )
+    writeup_link = models.URLField(
+        blank=True, help_text="Link to writeup or blog about project."
+    )
     sort_order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
     class Meta(object):

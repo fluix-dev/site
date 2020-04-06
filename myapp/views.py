@@ -62,6 +62,6 @@ def contact(request):
 
 def projects(request):
     context = {
-        projects: Project.objects.all().order_by("sort_order"),
+        "projects": Project.objects.all().order_by("sort_order"),
     }
     return render(request, "projects.html", context)
