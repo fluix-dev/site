@@ -10,6 +10,8 @@
     <span class="text-gray col"><i class="zmdi zmdi-time"></i> {{ blog.get_time_length }} min</span>
   </div>
   <br>
-  {{ blog.content|mistune }}
+  <div class="blog-content">
+    {{ blog.content|mistune }}
+  </div>
 </div>
 {% endblock %}
