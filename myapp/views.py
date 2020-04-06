@@ -1,19 +1,19 @@
-import datetime
 import logging
 
 from .forms import ContactForm
 from .models import Blog, ContactMessage, Project
 
-from django.shortcuts import render, reverse
-from django.http import Http404, HttpResponse
+from django.shortcuts import get_object_or_404, render, reverse
+from django.http import HttpResponse
+from django.utils import timezone
 
 logger = logging.getLogger(__name__)
 
-# Create your views here.
+
 def index(request):
     context = {
         "blogs": Blog.objects.all()
-        .filter(published_at__lte=datetime.datetime.now())
+        .filter(published_at__lte=timezone.now())
         .order_by("published_at")
     }
     return render(request, "index.html", context)
@@ -24,7 +24,8 @@ def about(request):
 
 
 def blog(request, slug):
-    return render(request, "blog.html", {"blog": Blog.objects.get(slug=slug)})
+    blog = get_object_or_404(Blog, slug=slug, published_at__lte=timezone.now())
+    return render(request, "blog.html", {"blog": blog})
 
 
 def contact(request):
@@ -51,8 +52,8 @@ def contact(request):
 
             # Success Message
             message = "Sent!"
-
         return HttpResponse(message)
+
     context = {
         "form": ContactForm(),
     }

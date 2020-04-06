@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.safestring import mark_safe
 
-# Create your models here.
+
 class TimeStampMixin(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True, help_text='The time this model was created at.'
