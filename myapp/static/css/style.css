@@ -55,3 +55,8 @@
   color: #000000;
   text-decoration: none;
 }
+
+.highlight {
+  border: solid lightgray 4px;
+  padding: 5px 10px;
+}
