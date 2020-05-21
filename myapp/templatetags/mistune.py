@@ -21,6 +21,6 @@ class HighlightRenderer(mistune.HTMLRenderer):
 def mistune_html(text):
     markdown = mistune.create_markdown(
         renderer=HighlightRenderer(),
-        plugins=["strikethrough", "footnotes", "table", "task_lists"],
+        plugins=["strikethrough", "footnotes", "table"],
     )
     return mark_safe(markdown(text))
