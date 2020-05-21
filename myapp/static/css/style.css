@@ -69,3 +69,12 @@
   border: solid lightgray 4px;
   padding: 5px 10px;
 }
+
+td, th, table {
+  border: 1px solid #ddd;
+  padding: 2px 4px;
+}
+
+th {
+  background-color: #eee;
+}
