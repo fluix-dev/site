@@ -29,7 +29,7 @@ class Blog(TimeStampMixin):
         return self.title
 
     def get_time_length(self):
-        return int(len(self.content.split()) / 180)
+        return int(len(self.content.split()) / 125)
 
 
 class ContactMessage(TimeStampMixin):
