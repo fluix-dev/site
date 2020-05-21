@@ -24,7 +24,12 @@ def about(request):
 
 
 def blog(request, slug):
-    blog = get_object_or_404(Blog, slug=slug, published_at__lte=timezone.now())
+    if request.user.is_staff:
+        blog = get_object_or_404(Blog, slug=slug)
+    else:
+        blog = get_object_or_404(
+            Blog, slug=slug, published_at__lte=timezone.now()
+        )
     return render(request, "blog.html", {"blog": blog})
 
 
