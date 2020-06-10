@@ -5,76 +5,84 @@
 }
 
 .blog-content a {
+  transition: color 0.4s ease;
   text-decoration: none;
-  color: #47A2D7;
+  color: #1f62b3;
 }
 
 .blog-content a:hover {
-  border-bottom: 1px #47A2D7 solid;
+  color: #a12269;
+}
+
+code {
+  color: #212529;
+	background-color: #f8f8f8;
+	border-radius: 3px;
+	padding: 0px 4px;
+	border: 1px solid #ccc;
+	vertical-align: middle;
 }
 
 .h4-custom {
+  color: #a12269;
   font-weight: bold;
+  font-size: 2em;
   margin-bottom: 0px;
 }
 
 @media only screen and (max-width: 480px) {
-  .navbar-brand img {
-    visibility: hidden;
-    width: 0px;
-  }
-
-  .navbar-brand p {
-    visibility: hidden;
-    width: 0px;
+  .navbar-brand {
+    margin-right: 0px;
+    margin-left: -10px;
   }
 }
 
-.navbar-brand p {
-  padding-top: 0.5rem;
-  display: inline-block;
-  color: #1B212C;
+/* !important tags suck.
+ * TODO: Use a custom bootstrap
+ */
+.link {
+  text-decoration: none;
+  transition: color 0.4s ease;
+  color: #1f62b3!important;
 }
 
-.navbar-light .navbar-nav .c-blue {
-  color: #47A2D7;
+.link:hover {
+  text-decoration: none;
+  color: #a12269!important;
 }
-
-.navbar-light .navbar-nav .c-blue:hover {
-  color: #1B212C;
-}
-
 
 .navbar-custom {
   border-color: #1B212C;
   border-bottom: 2px solid;
-  height: 80px;
+  height: 70px;
   box-shadow: 0px 2px 8px 0px rgba(0,0,0,.3), 0px 0px 2px 0px rgba(0,0,0,.05);
+  margin: 10px;
 }
 
 .text-gray {
   color: #737374;
 }
 
-.text-link {
-  color: #000000;
-}
-
-.text-link:hover {
-  color: #000000;
-  text-decoration: none;
-}
-
+/*
+ * TODO: Add scrollbar colors for webkit browsers.
+ */
 .highlight {
-  border-radius: 5px;
+  border-top: 2px solid white;
+  box-shadow: 0px 2px 8px 0px rgba(0,0,0,.6), 0px 0px 2px 0px rgba(0,0,0,.1);
   padding: 5px 10px;
+  scrollbar-color: #506568 #212529;
 }
 
-td, th, table {
+td, th {
   border: 1px solid #ddd;
   padding: 2px 4px;
 }
 
 th {
   background-color: #eee;
+}
+
+table {
+  border-top: 2px solid black;
+  box-shadow: 0px 2px 8px 0px rgba(0,0,0,.3), 0px 0px 2px 0px rgba(0,0,0,.05);
 }
