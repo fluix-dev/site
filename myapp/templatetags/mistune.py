@@ -20,7 +20,7 @@ class HighlightRenderer(mistune.HTMLRenderer):
 @register.filter(name="mistune", is_safe=True)
 def mistune_html(text):
     markdown = mistune.create_markdown(
-        renderer=HighlightRenderer(),
+        renderer=HighlightRenderer(escape=False),
         plugins=["strikethrough", "footnotes", "table"],
     )
     return mark_safe(markdown(text))
