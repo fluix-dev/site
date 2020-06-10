@@ -98,12 +98,12 @@ table {
   box-shadow: 0px 2px 8px 0px rgba(0,0,0,.3), 0px 0px 2px 0px rgba(0,0,0,.05);
 }
 
-.video-dark {
+.popout-dark {
   border-top: 2px solid white;
   box-shadow: 0px 2px 8px 0px rgba(0,0,0,.6), 0px 0px 2px 0px rgba(0,0,0,.1);
 }
 
-.video-light {
+.popout-light {
   border-top: 2px solid black;
   box-shadow: 0px 2px 8px 0px rgba(0,0,0,.3), 0px 0px 2px 0px rgba(0,0,0,.05);
 }
