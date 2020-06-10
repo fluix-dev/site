@@ -15,7 +15,7 @@ def index(request):
         blogs = Blog.objects.all()
     else:
         blogs = Blog.objects.all().filter(published_at__lte=timezone.now())
-    context = {"blogs": blogs.order_by("published_at")}
+    context = {"blogs": blogs.order_by("-published_at")}
     return render(request, "index.html", context)
 
 
