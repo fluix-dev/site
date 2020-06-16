@@ -1,4 +1,37 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block body %}
+<div class="container container-custom">
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-9"><br>
+      Hi! I'm a high school student interesting in programming, hacking, and a
+      bit of game development. While I've mainly been working on software
+      development, over the next year I'd like to get better at competitive
+      programming. I also have interests in badminton, ultime frisbee,
+      photography, and SCUBA diving. On this website are some of the
+      <a href="{% url 'projects' %}">Projects</a> I've worked on, along with a
+      series of <a href="{% url 'index' %}">Blogs</a> which I write in my spare
+      time. Below is also a list of contributions and achievements I've made.
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+      <img src="{% static "img/profile.png" %}" width=90%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <b>Contributions:</b>
+      <ul>
+        <li><a href="https://github.com/emersion/mako">Mako</a> - Added regex support for notification summaries.</li>
+        <li><a href="https://github.com/dmoj/online-judge">DMOJ Modern Online Judge</a> - Implemented API tokens and Selenium backend for PDF generation.</li>
+        <li><a href="https://github.com/mcpt/">MCPT</a> - Developer, responsible for pulling in code from upstream and further development.</li>
+      </ul>
+      <b>Achievements:</b>
+      <ul>
+        <li>2019 Canadian Computing Competition (Junior) Honour Roll</li>
+        <li>2018 Canada Wide Science Fair Finalist</li>
+      </ul>
+    </div>
+  </div>
+</div>
 {% endblock %}
