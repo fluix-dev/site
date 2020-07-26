@@ -8,6 +8,9 @@
     <a class="link" href="{% url 'blog' blog.slug %}">{{ blog.title }}</a>
   </h4>
   <div class="row">
+    {% if blog.hidden %}
+      <span class="text-gray col col-md-2"><i class="zmdi zmdi-eye-off"></i> Hidden</span>
+    {% endif %}
     <span class="text-gray col col-md-2"><i class="zmdi zmdi-calendar"></i> {{ blog.published_at.date }}</span>
     <span class="text-gray col col-md-2"><i class="zmdi zmdi-label"></i> {{ blog.tag }}</span>
     <span class="text-gray col"><i class="zmdi zmdi-time"></i> {{ blog.get_time_length }} min</span>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from django.utils.safestring import mark_safe
 
 
@@ -30,6 +31,10 @@ class Blog(TimeStampMixin):
 
     def get_time_length(self):
         return int(len(self.content.split()) / 125)
+
+    @property
+    def hidden(self):
+        return self.published_at > timezone.now()
 
 
 class ContactMessage(TimeStampMixin):
