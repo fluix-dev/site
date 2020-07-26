@@ -41,6 +41,7 @@ pynvim==0.4.1
 pyparsing==2.4.7
 python-creole==1.4.6
 pytz==2020.1
+r2highlight @ git+https://github.com/Pwnation/radare2-pygments-lexer.git@0dddc06df172c717d9b4372b1b3b74ff6b6f6d27
 regex==2020.6.7
 requests==2.23.0
 six==1.15.0
