@@ -1,11 +1,9 @@
+/**
+ * General
+ */
+
 body {
 	font-family: 'Iosevka Sparkle Web';
-}
-
-.container-custom > hr {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  border-top: 2px solid rgba(0, 0, 0, 0.1)
 }
 
 .container-custom {
@@ -14,6 +12,54 @@ body {
   padding-top: 5px;
 }
 
+.h4-custom {
+  color: #a12269;
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar-brand {
+    margin-right: 0px;
+    margin-left: -10px;
+  }
+}
+
+.navbar-light .navbar-nav .nav-link, a {
+  text-decoration: none;
+  transition: color 0.4s ease;
+  color: #1f62b3;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, a:hover {
+  text-decoration: none;
+  color: #a12269;
+}
+
+.navbar-custom {
+  border-color: #1B212C;
+  border-bottom: 2px solid;
+  height: 70px;
+  box-shadow: 0px 2px 8px 0px rgba(0,0,0,.3), 0px 0px 2px 0px rgba(0,0,0,.05);
+}
+
+.text-gray {
+  color: #737374;
+}
+
+/**
+ * Index page
+ */
+.container-custom > hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-top: 2px solid rgba(0, 0, 0, 0.1)
+}
+
+/**
+ * Blog post
+ */
 .blog-content p {
 	line-height: 1.2;
   text-align: justify;
@@ -50,48 +96,7 @@ code {
 	vertical-align: middle;
 }
 
-.h4-custom {
-  color: #a12269;
-  font-weight: bold;
-  font-size: 2em;
-  margin-bottom: 0px;
-}
-
-@media only screen and (max-width: 480px) {
-  .navbar-brand {
-    margin-right: 0px;
-    margin-left: -10px;
-  }
-}
-
-/* !important tags suck.
- * TODO: Use a custom bootstrap
- */
-.link {
-  text-decoration: none;
-  transition: color 0.4s ease;
-  color: #1f62b3!important;
-}
-
-.link:hover {
-  text-decoration: none;
-  color: #a12269!important;
-}
-
-.navbar-custom {
-  border-color: #1B212C;
-  border-bottom: 2px solid;
-  height: 70px;
-  box-shadow: 0px 2px 8px 0px rgba(0,0,0,.3), 0px 0px 2px 0px rgba(0,0,0,.05);
-}
-
-.text-gray {
-  color: #737374;
-}
-
-/*
- * TODO: Add scrollbar colors for webkit browsers.
- */
+/* TODO: Add scrollbar colors for webkit browsers. */
 .highlight {
   border-top: 2px solid white;
   box-shadow: 0px 2px 8px 0px rgba(0,0,0,.6), 0px 0px 2px 0px rgba(0,0,0,.1);
