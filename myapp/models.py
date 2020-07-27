@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.utils import timezone
 from django.utils.safestring import mark_safe
 
@@ -31,6 +32,12 @@ class Blog(TimeStampMixin):
 
     def get_time_length(self):
         return int(len(self.content.split()) / 125)
+
+    def get_absolute_url(self):
+        return reverse('blog', args=[self.slug])
+
+    def get_admin_url(self):
+        return reverse('admin:myapp_blog_change', args=[self.slug])
 
     @property
     def hidden(self):
