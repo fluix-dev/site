@@ -1,8 +1,11 @@
 from django.db import models
+from django.template.defaultfilters import truncatewords_html
 from django.urls import reverse
 from django.utils import timezone
+from django.utils.html import mark_safe
 from django.utils.safestring import mark_safe
 
+from myapp.templatetags.mistune import mistune_html
 
 class TimeStampMixin(models.Model):
     created_at = models.DateTimeField(
@@ -42,6 +45,13 @@ class Blog(TimeStampMixin):
     @property
     def hidden(self):
         return self.published_at > timezone.now()
+
+    @property
+    def snippet(self):
+        html = mistune_html(self.content).split("<!--break-->")
+        if len(html) == 1:
+            return mark_safe(truncatewords_html(html[0], 150))
+        return mark_safe(html[0])
 
 
 class ContactMessage(TimeStampMixin):

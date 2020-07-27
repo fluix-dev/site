@@ -19,7 +19,7 @@
     <span class="text-gray col"><i class="zmdi zmdi-time"></i> {{ blog.get_time_length }} min</span>
   </div>
   <div class="blog-content">
-    {{ blog.content|mistune|truncatewords_html:150 }}
+    {{ blog.snippet }}
     <a href="{% url 'blog' blog.slug %}">View more</a>
   </div>
   <hr>
