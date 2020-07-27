@@ -1,35 +1,43 @@
 from .models import Blog, Project
 
-from django.shortcuts import get_object_or_404, render, reverse
-from django.http import HttpResponse
+from django.http import Http404
 from django.utils import timezone
+from django.views.generic.base import TemplateView
+from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 
 
-def index(request):
-    if request.user.is_staff:
-        blogs = Blog.objects.all()
-    else:
-        blogs = Blog.objects.all().filter(published_at__lte=timezone.now())
-    context = {"blogs": blogs.order_by("-published_at")}
-    return render(request, "index.html", context)
+class IndexView(ListView):
+    model = Blog
+    template_name = "index.html"
+    context_object_name = "blogs"
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        if not self.request.user.is_staff:
+            return qs.filter(published_at__lte=timezone.now())
+        return qs
 
 
-def about(request):
-    return render(request, "about.html")
 
 
-def blog(request, slug):
-    if request.user.is_staff:
-        blog = get_object_or_404(Blog, slug=slug)
-    else:
-        blog = get_object_or_404(
-            Blog, slug=slug, published_at__lte=timezone.now()
-        )
-    return render(request, "blog.html", {"blog": blog})
+class BlogView(DetailView):
+    model = Blog
+    template_name = "blog.html"
+    context_object_name = "blog"
+
+    def get_object(self):
+        blog = super().get_object()
+        if not self.request.user.is_staff and blog.hidden:
+            raise Http404()
+        return blog
 
 
-def projects(request):
-    context = {
-        "projects": Project.objects.all().order_by("sort_order"),
-    }
-    return render(request, "projects.html", context)
+class ProjectsView(ListView):
+    model = Project
+    template_name = "projects.html"
+    context_object_name = "projects"
+
+
+class AboutView(TemplateView):
+    template_name = "about.html"
