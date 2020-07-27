@@ -2,24 +2,22 @@
 {% load mistune %}
 
 {% block body %}
-<div class="container container-custom">
-  <h4 class="h4-custom">{{ blog.title }}</h4>
+<h4 class="h4-custom">{{ blog.title }}</h4>
 
-  {% if blog.hidden %}
-    <span class="badge badge-dark"><i class="zmdi zmdi-eye-off"></i> Hidden</span>
-  {% endif %}
-  {% if user.is_staff %}
-    <a href="{{ blog.get_admin_url }}"><span class="badge badge-primary"><i class="zmdi zmdi-edit"></i> Edit</span></a>
-  {% endif %}
+{% if blog.hidden %}
+  <span class="badge badge-dark"><i class="zmdi zmdi-eye-off"></i> Hidden</span>
+{% endif %}
+{% if user.is_staff %}
+  <a href="{{ blog.get_admin_url }}"><span class="badge badge-primary"><i class="zmdi zmdi-edit"></i> Edit</span></a>
+{% endif %}
 
-  <div class="row">
-    <span class="text-gray col col-md-3"><i class="zmdi zmdi-calendar"></i> {{ blog.published_at.date }}</span>
-    <span class="text-gray col col-md-2"><i class="zmdi zmdi-label"></i> {{ blog.tag }}</span>
-    <span class="text-gray col"><i class="zmdi zmdi-time"></i> {{ blog.get_time_length }} min</span>
-  </div>
-  <div class="blog-content">
-  <hr>
-    {{ blog.content|mistune }}
-  </div>
+<div class="row">
+  <span class="text-gray col col-md-3"><i class="zmdi zmdi-calendar"></i> {{ blog.published_at.date }}</span>
+  <span class="text-gray col col-md-2"><i class="zmdi zmdi-label"></i> {{ blog.tag }}</span>
+  <span class="text-gray col"><i class="zmdi zmdi-time"></i> {{ blog.get_time_length }} min</span>
+</div>
+<div class="blog-content">
+<hr>
+  {{ blog.content|mistune }}
 </div>
 {% endblock %}
