@@ -2,13 +2,19 @@ body {
 	font-family: 'Iosevka Sparkle Web';
 }
 
+.container-custom > hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-top: 2px solid rgba(0, 0, 0, 0.1)
+}
+
 .container-custom {
   max-width: 960px;
   padding: 20px;
   padding-top: 5px;
 }
 
-.blog-content {
+.blog-content p {
 	line-height: 1.2;
   text-align: justify;
 }

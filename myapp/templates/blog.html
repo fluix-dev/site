@@ -17,8 +17,8 @@
     <span class="text-gray col col-md-2"><i class="zmdi zmdi-label"></i> {{ blog.tag }}</span>
     <span class="text-gray col"><i class="zmdi zmdi-time"></i> {{ blog.get_time_length }} min</span>
   </div>
-  <hr>
   <div class="blog-content">
+  <hr>
     {{ blog.content|mistune }}
   </div>
 </div>
