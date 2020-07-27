@@ -53,6 +53,9 @@ class Blog(TimeStampMixin):
             return mark_safe(truncatewords_html(html[0], 150))
         return mark_safe(html[0])
 
+    class Meta:
+        ordering = ["-published_at"]
+
 
 class Project(models.Model):
     image = models.ImageField(help_text='An image representing the project')

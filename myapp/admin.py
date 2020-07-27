@@ -10,6 +10,7 @@ class BlogAdmin(admin.ModelAdmin):
         'title',
         'tag',
         'content_truncate',
+        'published_at',
         'created_at',
         'updated_at',
     )
