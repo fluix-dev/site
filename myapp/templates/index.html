@@ -2,6 +2,16 @@
 {% load mistune %}
 
 {% block body %}
+<br>
+<div class="blog-links">
+  <nobr>
+    <i class="zmdi zmdi-rss"></i> <a href="{% url 'rss-feed' %}">RSS</a> ·
+    <a href="{% url 'atom-feed' %}">Atom</a>&emsp;&emsp;
+  </nobr>
+  <nobr><i class="zmdi zmdi-view-headline"></i> <a href="{% url 'timeline' %}">Blog Timeline</a>&emsp;&emsp;</nobr>
+  <nobr><i class="zmdi zmdi-github"></i> <a href="https://github.com/TheAvidDev/">Github</a>&emsp;&emsp;</nobr>
+  <nobr><i class="zmdi zmdi-email"></i> <a href="mailto:contact@theavid.dev">contact@theavid.dev</a>&emsp;&emsp;</nobr>
+</div>
 {% for blog in blogs %}
 <h4 class="h4-custom">
   <a class="link" href="{% url 'blog' blog.slug %}">{{ blog.title }}</a>

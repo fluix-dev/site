@@ -22,6 +22,10 @@ class IndexView(ListView):
         return qs
 
 
+class TimelineView(IndexView):
+    template_name = "timeline.html"
+
+
 class RSSBlogFeed(Feed):
     title = "TheAvidDev's Blog"
     link = "/"

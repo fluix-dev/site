@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block body %}
+<br>
+<h4 class="h4-custom">Blog Timeline</h4>
+<ul>
+{% for blog in blogs %}
+  <li>
+    {{ blog.published_at|date:"Y-m-d" }} &mdash; <a href="{% url "blog" blog.slug %}">{{ blog.title }}</a>
+    {% if user.is_staff %}
+      <a href="{{ blog.get_admin_url }}">
+        <span class="badge badge-primary"><i class="zmdi zmdi-edit"></i> Edit</span>
+      </a>
+    {% endif %}
+    {% if blog.hidden %}
+      <span class="badge badge-dark"><i class="zmdi zmdi-eye-off"></i> Hidden</span>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}

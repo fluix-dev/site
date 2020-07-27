@@ -57,6 +57,13 @@ body {
   border-top: 2px solid rgba(0, 0, 0, 0.1)
 }
 
+.blog-links {
+  border-radius: 0.3rem;
+  background-color: #e9ecef;
+  padding: 0.5rem;
+  text-align: center;
+}
+
 /**
  * Blog post
  */
