@@ -1,7 +1,16 @@
+body {
+	font-family: 'Iosevka Sparkle Web';
+}
+
 .container-custom {
   max-width: 960px;
   padding: 20px;
   padding-top: 5px;
+}
+
+.blog-content {
+	line-height: 1.2;
+  text-align: justify;
 }
 
 .blog-content a {
@@ -23,6 +32,7 @@ blockquote {
 blockquote > p {
   margin: 0px;
   padding: 5px;
+  font-style: oblique;
 }
 
 code {
@@ -81,6 +91,12 @@ code {
   box-shadow: 0px 2px 8px 0px rgba(0,0,0,.6), 0px 0px 2px 0px rgba(0,0,0,.1);
   padding: 5px 10px;
   scrollbar-color: #506568 #212529;
+}
+
+.highlight > pre {
+  font-family: 'Iosevka SS14 Web';
+  font-stretch: expanded;
+  line-height: 1.25;
 }
 
 td, th {
