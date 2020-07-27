@@ -24,3 +24,11 @@ def mistune_html(text):
         plugins=["strikethrough", "footnotes", "table"],
     )
     return mark_safe(markdown(text))
+
+
+@register.filter(name="mistune_noh", is_safe=True)
+def mistune_html_no_highlight(text):
+    markdown = mistune.create_markdown(
+        plugins=["strikethrough", "footnotes", "table"],
+    )
+    return mark_safe(markdown(text))
