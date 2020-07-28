@@ -1,7 +1,8 @@
-from .models import Blog, Project
+from .models import About, Blog, Project
 
-from django.contrib import admin
 from adminsortable2.admin import SortableAdminMixin
+from django.contrib import admin
+from solo.admin import SingletonModelAdmin
 
 
 class BlogAdmin(admin.ModelAdmin):
@@ -32,5 +33,6 @@ class ProjectAdmin(SortableAdminMixin, admin.ModelAdmin):
 
 admin.site.site_header = 'Site Administration'
 
-admin.site.register(Project, ProjectAdmin)
+admin.site.register(About, SingletonModelAdmin)
 admin.site.register(Blog, BlogAdmin)
+admin.site.register(Project, ProjectAdmin)

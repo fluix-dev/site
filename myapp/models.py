@@ -1,11 +1,13 @@
+from .templatetags.mistune import mistune_html
+
 from django.db import models
 from django.template.defaultfilters import truncatewords_html
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.html import mark_safe
 from django.utils.safestring import mark_safe
+from solo.models import SingletonModel
 
-from myapp.templatetags.mistune import mistune_html
 
 class TimeStampMixin(models.Model):
     created_at = models.DateTimeField(
@@ -17,6 +19,11 @@ class TimeStampMixin(models.Model):
 
     class Meta:
         abstract = True
+
+
+class About(SingletonModel):
+    description = models.TextField(help_text='Description placed beside image.')
+    content = models.TextField(help_text='Content below description and image.')
 
 
 class Blog(TimeStampMixin):
