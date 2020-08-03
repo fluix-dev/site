@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% load mistune %}
 
+{% block head %}
+  <meta property="article:published_time" content="{{ blog.published_at|date:'c' }}">
+  <meta property="article:modified_time" content="{{ blog.updated_at|date:'c' }}">
+  <meta property="article:author" content="TheAvidDev">
+  <meta property="article:section" content="Technology">
+  <meta property="article:tag" content="{{ blog.tag }}">
+{% endblock %}
+
 {% block body %}
 <h4 class="h4-custom">{{ blog.title }}</h4>
 
@@ -12,7 +20,7 @@
 {% endif %}
 
 <div class="row">
-  <span class="text-gray col col-md-3"><i class="zmdi zmdi-calendar"></i> {{ blog.published_at.date }}</span>
+  <span class="text-gray col col-md-3"><i class="zmdi zmdi-calendar"></i> {{ blog.published_at|date }}</span>
   <span class="text-gray col col-md-2"><i class="zmdi zmdi-label"></i> {{ blog.tag }}</span>
   <span class="text-gray col"><i class="zmdi zmdi-time"></i> {{ blog.get_time_length }} min</span>
 </div>
