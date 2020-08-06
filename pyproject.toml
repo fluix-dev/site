@@ -1,0 +1,14 @@
+[tool.black]
+line-length = 80
+exclude = '''
+(
+  /(
+    \.git
+    | env/
+    | manage\.py
+  )
+  | /mysite/settings\.py
+  | __pycache__
+  | migrations
+)
+'''
