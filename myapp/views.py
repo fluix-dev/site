@@ -31,9 +31,8 @@ class MetadataMixin(object):
             "title": self.get_title(),
             "description": self.get_description(),
             "og_type": self.get_og_type(),
-            **super().get_context_data(**kwargs)
+            **super().get_context_data(**kwargs),
         }
-
 
 
 class IndexView(MetadataMixin, ListView):
@@ -107,9 +106,11 @@ class ProjectsView(MetadataMixin, ListView):
     title = "Project List"
 
     def get_description(self):
-        return ("A list of the most notable projects I've worked on "
+        return (
+            "A list of the most notable projects I've worked on "
             "throughout the years. It ranges from websites, to applications, to "
-            "tools, and random scripts.")
+            "tools, and random scripts."
+        )
 
 
 class AboutView(MetadataMixin, TemplateView):
