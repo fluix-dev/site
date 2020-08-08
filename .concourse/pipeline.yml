@@ -28,7 +28,8 @@ jobs:
       - get: repo
         trigger: true
       - set_pipeline: aviddev-site
-        file: .concourse/pipeline.yml
+        inputs: [repo]
+        file: repo/.concourse/pipeline.yml
   - name: lint
     on_success:
       put: gh-status
