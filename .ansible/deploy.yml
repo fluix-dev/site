@@ -23,6 +23,5 @@
         chdir: /home/main/aviddev/
 
     - name: "Reload service"
-      systemd:
-        name: gunicorn-aviddev
-        state: reloaded
+      shell:
+        cmd: sudo systemctl reload gunicorn-aviddev
