@@ -83,7 +83,8 @@ jobs:
   - name: deploy
     plan:
       - get: repo
-        passed: [set-self]
+        trigger: true
+        passed: [lint]
       - put: ansible
         params:
           check: true
