@@ -6,6 +6,12 @@ resource_types:
   source:
     repository: pix4d/cogito
 
+- name: ansible-playbook
+  type: docker-image
+  source:
+    repository: troykinsella/concourse-ansible-playbook-resource
+    tag: latest
+
 resources:
 - name: gh-status
   type: cogito
@@ -22,13 +28,21 @@ resources:
     uri: https://github.com/TheAvidDev/site
     branch: master
 
+- name: ansible
+  type: ansible-playbook
+  source:
+    debug: true
+    user: ansible
+    ssh_private_key: ((ansible.sshkey))
+    verbose: vvvv
+
 jobs:
-  - name: set-pipeline
+  - name: set-self
     plan:
       - get: repo
         trigger: true
-      - set_pipeline: aviddev-site
         inputs: [repo]
+      - set_pipeline: aviddev-site
         file: repo/.concourse/pipeline.yml
   - name: lint
     on_success:
@@ -46,6 +60,7 @@ jobs:
     plan:
       - get: repo
         trigger: true
+        passed: [set-self]
       - put: gh-status
         inputs: [repo]
         params: {state: pending}
@@ -65,4 +80,15 @@ jobs:
                 apk add --no-progress gcc musl-dev python3-dev py3-pip
                 pip install black
                 black --check --diff repo
+  - name: deploy
+    plan:
+      - get: repo
+        passed: [set-self]
+      - put: ansible
+        params:
+          check: true
+          diff: true
+          inventory: .ansible/hosts.yml
+          playbook: .ansible/playbook.yml
+          path: repo
 
