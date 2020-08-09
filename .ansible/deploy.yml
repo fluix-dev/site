@@ -14,12 +14,12 @@
 
     - name: "Collect static files"
       shell:
-        cmd: env/bin/python manage.py collectstatic --settings=mysite.local_settings
+        cmd: env/bin/python manage.py collectstatic --noinput --settings=mysite.local_settings
         chdir: /home/main/aviddev/
 
     - name: "Run migrations"
       shell:
-        cmd: env/bin/python manage.py migrate --settings=mysite.local_settings
+        cmd: env/bin/python manage.py migrate --noinput --settings=mysite.local_settings
         chdir: /home/main/aviddev/
 
     - name: "Reload service"
