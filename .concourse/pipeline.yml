@@ -31,10 +31,10 @@ resources:
 - name: ansible
   type: ansible-playbook
   source:
-    debug: true
+    debug: false
     user: ansible
     ssh_private_key: ((ansible.sshkey))
-    verbose: vvvv
+    verbose: v
 
 jobs:
   - name: set-self
@@ -87,8 +87,6 @@ jobs:
         passed: [lint]
       - put: ansible
         params:
-          check: true
-          diff: true
           inventory: .ansible/hosts.yml
           playbook: .ansible/deploy.yml
           path: repo
