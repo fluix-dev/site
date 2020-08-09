@@ -90,6 +90,6 @@ jobs:
           check: true
           diff: true
           inventory: .ansible/hosts.yml
-          playbook: .ansible/playbook.yml
+          playbook: .ansible/deploy.yml
           path: repo
 
