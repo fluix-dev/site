@@ -1,2 +1,2 @@
 # Personal Website
-My personal website created with Django, which will soon be re-written with something else.
+I've since switch to [Hugo](https://gohugo.io/), with the project available [here](https://sr.ht/~fluix/fluix.one/). This used to be my personal website created with Django which I promised to rewrite soon... so I did!
