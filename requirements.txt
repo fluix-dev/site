@@ -30,7 +30,7 @@ mistune==2.0.0a2
 msgpack==1.0.0
 packaging==20.4
 pathspec==0.8.0
-Pillow==7.1.2
+Pillow==8.1.1
 pycodestyle==2.6.0
 pyflakes==2.2.0
 Pygments==2.6.1
