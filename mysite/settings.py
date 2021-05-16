@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'adminsortable2',
-    'discord_integration',
     'solo',
 ]
 
@@ -127,6 +126,7 @@ LOGGING = {
         'myapp': {'handlers': ['discord'], 'propgate': True, 'level': 'DEBUG',},
     },
 }
+LOGGING = {}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
